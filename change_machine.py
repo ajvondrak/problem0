@@ -1,12 +1,8 @@
 import sys
 
 def deduct(cents, denom):
-    n = 0
-    while cents >= denom:
-        cents -= denom
-        n += 1
-    if n > 0:
-        print "%d x %d cents" % (n, denom)
+    n, cents = divmod(cents, denom)
+    if n > 0: print "%d x %d cents" % (n, denom)
     return cents
 
 def change_machine(cents):
