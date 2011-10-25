@@ -15,5 +15,6 @@ def change_machine(cents):
     cents = deduct(cents, 10)
     cents = deduct(cents, 5)
     deduct(cents, 1)
+    print
 
 for line in sys.stdin.readlines(): change_machine(int(line))
