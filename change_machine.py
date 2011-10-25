@@ -1,14 +1,9 @@
 import sys
 
-def deduct(cents, denom):
-    n, cents = divmod(cents, denom)
-    if n > 0: print "%d x %d cents" % (n, denom)
-    return cents
-
 for cents in map(int, sys.stdin.readlines()):
-    print "%d cents:" % cents
-    cents = deduct(cents, 25)
-    cents = deduct(cents, 10)
-    cents = deduct(cents, 5)
-    deduct(cents, 1)
+    print cents, "cents:"
+    if (cents/25): print cents/25, "x 25 cents"
+    if (cents%25/10): print cents%25/10, "x 10 cents"
+    if (cents%25%10/5): print cents%25%10/5, "x 5 cents"
+    if (cents%25%10%5): print cents%25%10%5, "x 1 cents"
     print
