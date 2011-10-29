@@ -1,8 +1,6 @@
 import sys
 for i in map(int,sys.stdin):
- x="x %s cents";print i,"cents:"
- if i/25:print i/25,x%25;i%=25
- if i/10:print i/10,x%10;i%=10
- if i/5:print i/5,x%5
- if i%5:print i%5,x%1
+ print i,"cents:"
+ for c in(25,10,5,1):
+  if i/c:print i/c,"x",c,"cents";i%=c
  print
